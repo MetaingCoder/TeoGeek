@@ -1,20 +1,32 @@
-name: Build and Deploy TeoGeek
+name: Deploy TeoGeek
+
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
   workflow_dispatch:
-permissions:
-  contents: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      deployments: write
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v6
+
       - name: Generate article index
-        run: python3 scripts/generate-index.py
+        run: |
+          python3 scripts/generate-index.py
+
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=teogeek --branch=main
+          command: pages deploy . --project-name=teogeek
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
