@@ -1,51 +1,110 @@
-# TeoGeek
+# TGeek
 
-黑白极简纯静态 Markdown 博客。
+> 记录开发与折腾，分享科技背后的思考与创造。
 
-## 写文章
+TGeek 是一个简洁、轻量的纯静态个人博客，专注于记录开发、科技、AI、开源项目以及各种折腾过程。
 
-在 `posts/` 新建：
+网站采用 **HTML + CSS + JavaScript + Markdown** 构建，不依赖数据库和传统后端。
+
+## 特点
+
+- 纯静态，无数据库、无服务器
+- 使用 Markdown 编写文章
+- GitHub 管理代码与文章
+- GitHub Actions 自动生成文章索引
+- Cloudflare Pages 自动部署
+- 支持标签、搜索、归档和 RSS
+- 支持移动端访问
+- 简洁的黑白 UI 设计
+
+## 工作流程
+
+```text
+Markdown
+   ↓
+GitHub
+   ↓
+GitHub Actions
+   ↓
+生成文章索引
+   ↓
+Cloudflare Pages
+   ↓
+TGeek
+```
+
+写完文章后，只需要将 `.md` 文件放入：
+
+```text
+posts/
+```
+
+例如：
+
+```text
+posts/2026-09-17-my-first-post.md
+```
+
+提交到 GitHub 后，GitHub Actions 会自动处理并部署，无需手动修改文章索引。
+
+## 文章格式
 
 ```markdown
 ---
-title: 我的新文章
-date: 2026-09-16
-tags: ["AI", "Geek"]
-description: 一句话描述
+title: 我的第一篇文章
+date: 2026-09-17
+tags: ["Geek", "Web"]
+description: 这是一篇文章简介
 ---
 
-# 我的新文章
+# 我的第一篇文章
 
-正文……
+这里开始写正文。
+
+## 标题
+
+文章内容……
 ```
 
-然后 `git add . && git commit -m "new post" && git push`。
+## 项目结构
 
-GitHub Actions 会自动扫描 Markdown、生成 `posts/index.json`、生成 RSS，并部署到 Cloudflare Pages。
+```text
+TGeek/
+├── index.html
+├── post.html
+├── assets/
+├── posts/
+├── scripts/
+├── .github/
+└── README.md
+```
 
-前端运行时不会访问 GitHub API。
+## 部署
 
-## Cloudflare / GitHub Secrets
+将项目上传至 GitHub 后，配置 Cloudflare Pages，并在 GitHub Repository Secrets 中添加：
 
-在 GitHub Repository → Settings → Secrets and variables → Actions 添加：
+```text
+CLOUDFLARE_API_TOKEN
+CLOUDFLARE_ACCOUNT_ID
+```
 
-- `CLOUDFLARE_API_TOKEN`
-- `CLOUDFLARE_ACCOUNT_ID`
+之后每次提交代码或文章，GitHub Actions 都会自动部署。
 
-并把 `scripts/generate-index.py` 里的 `https://example.com` 改成你的真实域名。
+## 本地运行
 
-Cloudflare Pages 项目名默认是 `teogeek`。
-
-## 本地预览
-
-不要直接双击 HTML。运行：
+安装 Python 后，在项目目录执行：
 
 ```bash
 python3 -m http.server 8000
 ```
 
-然后打开 `http://localhost:8000`。
+然后访问：
 
-## 设计
+```text
+http://localhost:8000
+```
 
-黑白、无彩色 Badge、`#Tag` 右侧信息栏、细分割线、大留白、移动端适配、无前端框架、无数据库、无 GitHub API。
+## License
+
+MIT License
+
