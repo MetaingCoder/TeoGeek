@@ -626,13 +626,12 @@
     // =========================
 
     if (
-        location.pathname.endsWith(
-            "/post.html"
-        )
-    ) {
-        post();
-    } else {
-        home();
-    }
+    location.pathname.endsWith("/post.html") ||
+    location.pathname.endsWith("/post")
+) {
+    post();
+} else {
+    home();
+}
 
 })();
