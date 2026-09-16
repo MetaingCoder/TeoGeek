@@ -1,3 +1,10 @@
+---
+title: V2Ray Ndoe Deployment
+date: 2026-9-16
+tags: ["AWS", "V2Ray", "NODE"]
+description: 用一个简单的工作流自动生成文章索引并部署网站。
+---
+
 # 🚀 AWS EC2 Hands-on Deployment Tutorial: Building an Exclusive V2Ray Node (Ubuntu Edition)
 
 ## Preface
