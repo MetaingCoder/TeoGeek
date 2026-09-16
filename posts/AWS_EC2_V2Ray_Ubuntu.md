@@ -1,10 +1,3 @@
----
-title: V2Ray Ndoe Deployment
-date: 2026-9-16
-tags: ["AWS", "V2Ray", "NODE"]
-description: 用一个简单的工作流自动生成文章索引并部署网站。
----
-
 # 🚀 AWS EC2 Hands-on Deployment Tutorial: Building an Exclusive V2Ray Node (Ubuntu Edition)
 
 ## Preface
@@ -656,56 +649,43 @@ sudo ufw status
 
 If you've followed this article to the letter, you can check it one last time by following the following checklist:
 
-```text
-AWS:
+### AWS
+- [x] AWS account is normal 
+- [x] EC2 instance has been created 
+- [x] Ubuntu Server is running normally 
+- [x] SSH Key has been saved 
+- [x] Public IPv4 has been verified 
+- [x] Security Group has been configured 
 
- [✓] AWS account is normal 
-[✓] EC2 instance has been created 
-[✓] Ubuntu Server is running normally 
-[✓] SSH Key has been saved 
-[✓] Public IPv4 has been verified 
-[✓] Security Group has been configured 
+### SSH
+- [x] SSH login can be used 
+- [x] Using the ubuntu user 
+- [x] PEM private key path is correct 
 
+### Ubuntu
+- [x] System has been updated 
+- [x] curl has been installed 
+- [x] UFW is configured correctly (if enabled) 
 
-SSH:
+### V2Ray
+- [x] V2Ray has been installed 
+- [x] UUID has been generated 
+- [x] config.json has been modified 
+- [x] JSON format is correct 
+- [x] V2Ray service is running normally 
+- [x] 10086 is listening 
 
-[✓] SSH login can be used 
-[✓] Using the ubuntu user 
-[✓] PEM private key path is correct 
+### Client
+- [x] AWS public IP is correct 
+- [x] Port = 10086
+- [x] UUID matches server 
+- [x] Network = WebSocket
+- [x] Path = /your-path 
 
-
-Ubuntu: 
-
-[✓] System has been updated 
-[✓] curl has been installed 
-[✓] UFW is configured correctly (if enabled) 
-
-
-V2Ray: 
-
-[✓] V2Ray has been installed 
-[✓] UUID has been generated 
-[✓] config.json has been modified 
-[✓] JSON format is correct 
-[✓] V2Ray service is running normally 
-[✓] 10086 is listening 
-
-
-Client:
-
-[✓] AWS public IP is correct 
-[✓] Port = 10086
-[✓] UUID matches server 
-[✓] Network = WebSocket
-[✓] Path = /your-path 
-
-
-Network:
-
-[✓] AWS Security Group allows service ports
-[✓] Ubuntu firewall allows service ports
-[✓] SSH works fine
-```
+### Network
+- [x] AWS Security Group allows service ports
+- [x] Ubuntu firewall allows service ports
+- [x] SSH works fine
 
 ---
 
@@ -715,23 +695,21 @@ From creating a server with AWS EC2 to finally getting clients to successfully c
 
 The whole process can be condensed into:
 
-```text
-AWS EC2
-   ↓
-Ubuntu
-   ↓
-SSH
-   ↓
-V2Ray
-   ↓
-config.json
-   ↓
-UUUID + Port + Protocol + WebSocket
-   ↓
-AWS Security Group
-    ↓
-Client
-```
+- AWS EC2
+  ↓
+- Ubuntu
+  ↓
+- SSH
+  ↓
+- V2Ray
+  ↓
+- config.json
+  ↓
+- UUID + Port + Protocol + WebSocket
+  ↓
+- AWS Security Group
+  ↓
+- Client
 
 The most important thing to understand is the concept of "port". The server-side V2Ray  `10086`  is a server-side listening port, while ports such as  `7890`  used by client-side software are usually local proxy ports, and are not the same thing. Understanding the relationship between server-side ports, client-side ports, AWS Security Groups, and Ubuntu UFW makes many seemingly complex network problems much easier to troubleshoot. 
 
