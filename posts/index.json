@@ -1,0 +1,37 @@
+[
+  {
+    "title": "如何搭建一个属于自己的静态博客",
+    "date": "2026-09-16",
+    "tags": [
+      "Web",
+      "Static",
+      "Cloudflare"
+    ],
+    "description": "从 Markdown 到 Cloudflare Pages，搭建一个轻量的纯静态博客。",
+    "slug": "2026-09-16-static-blog",
+    "path": "/posts/2026-09-16-static-blog.md"
+  },
+  {
+    "title": "Cloudflare Pages 部署完全指南",
+    "date": "2026-09-15",
+    "tags": [
+      "Cloudflare",
+      "Deploy"
+    ],
+    "description": "使用 GitHub Actions 将静态博客部署到 Cloudflare Pages。",
+    "slug": "2026-09-15-cloudflare",
+    "path": "/posts/2026-09-15-cloudflare.md"
+  },
+  {
+    "title": "GitHub Actions：让博客自动更新",
+    "date": "2026-09-14",
+    "tags": [
+      "GitHub",
+      "Actions",
+      "Dev"
+    ],
+    "description": "用一个简单的工作流自动生成文章索引并部署网站。",
+    "slug": "2026-09-14-github-actions",
+    "path": "/posts/2026-09-14-github-actions.md"
+  }
+]
