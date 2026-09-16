@@ -644,11 +644,11 @@ View specified port:
  sudo ss -lntp | grep 10086
 ```
 
-View UFW:
+### View UFW:
 
-``bash
+`` `bash
 sudo ufw status
-``
+`` `
 
 ---
 
@@ -718,7 +718,7 @@ The whole process can be condensed into:
   ↓
 - Client
 
-The most important thing to understand is the concept of "port". The server-side V2Ray  `10086`  is a server-side listening port, while ports such as  `7890`  used by client-side software are usually local proxy ports, and are not the same thing. Understanding the relationship between server-side ports, client-side ports, AWS Security Groups, and Ubuntu UFW makes many seemingly complex network problems much easier to troubleshoot. 
+The most important thing to understand is the concept of "port". The server-side V2Ray `10086` is a server-side listening port, while ports such as `7890` used by client-side software are usually local proxy ports, and are not the same thing. Understanding the relationship between server-side ports, client-side ports, AWS Security Groups, and Ubuntu UFW makes many seemingly complex network problems much easier to troubleshoot. 
 
 If you're ready to go deeper, you can build on this foundation by learning about domain names, DNS, TLS, Nginx, Caddy, Docker, Cloudflare, and Linux server security. You'll no longer just have "how to install a V2Ray", but a complete set of deployment ideas that can be migrated to personal websites, API services, Docker projects, and other cloud server applications. 
 
