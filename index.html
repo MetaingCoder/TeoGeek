@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="TeoGeek · 记录开发与折腾，分享科技背后的思考与创造。">
+<title>TeoGeek</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="site-shell">
+<header class="site-header">
+<a class="brand" href="/"><span class="brand-mark">T</span><span class="brand-name">TeoGeek</span></a>
+<nav class="top-nav">
+<button class="icon-button" id="searchBtn" aria-label="搜索" title="搜索">⌕</button>
+<a href="/#archive">归档</a><a href="/#about">关于</a><a href="/rss.xml">RSS</a>
+</nav>
+</header>
+<p class="site-description">记录开发与折腾，分享科技背后的思考与创造。</p>
+<main>
+<section id="searchPanel" class="search-panel" hidden>
+<label for="searchInput">搜索文章</label>
+<input id="searchInput" type="search" placeholder="输入标题、标签或关键词…">
+<button id="clearSearch">清除</button>
+</section>
+<section>
+<div class="section-heading"><span>最新文章</span><span id="postCount" class="muted"></span></div>
+<div id="articleList" class="article-list"></div><div id="pagination" class="pagination"></div>
+</section>
+<section id="archive" class="content-section"><div class="section-heading">归档</div><div id="archiveList"></div></section>
+<section id="about" class="content-section about">
+<div class="section-heading">关于 TeoGeek</div>
+<p>TeoGeek 是一个纯静态的个人科技博客，用来记录开发、开源、工具、AI 以及各种折腾过程。</p>
+<p>文章以 Markdown 保存，前端负责读取和渲染；GitHub Actions 负责生成文章索引并部署到 Cloudflare Pages。</p>
+</section>
+</main>
+<footer class="site-footer">Copyright © <span id="year"></span> <a href="/">TeoGeek</a><br>记录开发与折腾 · Powered by TeoGeek</footer>
+</div>
+<script src="/assets/app.js"></script>
+</body></html>
